@@ -1,0 +1,28 @@
+version: '2'
+services:
+  first:
+    build: ./first/
+    volumes:
+      - data_volume:/opt/
+    networks:
+      default:
+        aliases:
+          - first
+  second:
+    build: ./second/
+    depends_on:
+      - first
+    volumes:
+      - data_volume:/opt/
+    volumes_from:
+      - first
+    ports:
+      - "8080:8080"
+    networks:
+      default:
+        aliases:
+          - second
+volumes:
+  data_volume:
+networks:
+  default:
