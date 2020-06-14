@@ -10,7 +10,7 @@ FROM tomcat:10.0-jdk11-openjdk
 #RUN mv apache-tomcat-8.5.56/* /opt/tomcat/.
 
 #RUN ls -la /home/boxfuse-sample-java-war-hello/
-RUN cp /opt/hello-1.0.war /usr/local/tomcat/webapps/
+#RUN cp /opt/hello-1.0.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 #CMD ["cp", "/home/boxfuse-sample-java-war-hello/target/hello-1.0.war", "/opt/tomcat/webapps/"]
 CMD ["catalina.sh", "run"]

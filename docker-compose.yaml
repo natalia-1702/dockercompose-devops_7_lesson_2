@@ -13,7 +13,7 @@ services:
     depends_on:
       - first
     volumes:
-      - data_volume:/opt/
+      - data_volume:/usr/local/tomcat/webapps/
     volumes_from:
       - first
     ports:
